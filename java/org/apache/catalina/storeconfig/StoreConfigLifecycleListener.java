@@ -119,6 +119,9 @@ public class StoreConfigLifecycleListener implements LifecycleListener {
      */
     protected DynamicMBean getManagedBean(Object object) throws Exception {
         ManagedBean managedBean = registry.findManagedBean("StoreConfig");
+        if (required && managedBean == null) {
+            throw new IllegalStateException("ManagedBean '" + name + "' not found");
+        }
         return managedBean.createMBean(object);
     }
 
