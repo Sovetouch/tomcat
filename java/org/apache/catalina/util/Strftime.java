@@ -39,7 +39,7 @@ public class Strftime {
     /**
      * Mapping of strftime format specifiers to SimpleDateFormat equivalents.
      */
-    protected static final Properties translate;
+    private static final Properties translate;
 
     /**
      * The underlying SimpleDateFormat instance used for date formatting.
